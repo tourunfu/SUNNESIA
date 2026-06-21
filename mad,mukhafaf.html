@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lazim Mukhaffaf - SUNNESIA</title>
+    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div style="flex: 1; display: flex; justify-content: flex-start;">
+                <a href="index.html#fitur" class="btn-back" style="padding: 8px 20px; font-size: 0.95rem;">
+                    <span style="margin-right: 6px; font-size: 1.2rem;">←</span> Beranda
+                </a>
+            </div>
+            <div class="logo" style="flex: 1; text-align: center; justify-content: center;">
+                <span
+                    style="font-family: 'Lobster Two', cursive; font-size: 2.5rem; color: var(--primary-color);">Sunnesia</span>
+            </div>
+            <div style="flex: 1;"></div>
+        </div>
+    </nav>
+    <div class="lms-container">
+        <aside class="sidebar">
+            <h3>Daftar Materi</h3>
+            <ul>
+                <li>
+                    <strong>Macam-Macam Mad</strong>
+
+                    
+                    <ul class="sub-menu">
+                        <li><a href="mad,thabii.html">Mad Thabi'i</a></li>
+                        <li><a href="mad,wajib.html">Mad Wajib & Jaiz</a></li>
+                        <li><a href="mad,mustaqqal.html">Mad Lazim Mutsaqqal</a></li>
+                        <li>
+                            <div style="background: rgba(20, 184, 166, 0.05); border-radius: var(--radius-small); margin-bottom: 5px; overflow: hidden;">
+                                <div onclick="toggleSubMenu('sub-mukhafaf', 'icon-mukhafaf')" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 10px 15px;">
+                                    <span style="color: var(--primary-dark); font-weight: 700; font-size: 1.05rem;">Mad Lazim Mukhaffaf</span>
+                                    <span id="icon-mukhafaf" style="color: var(--primary-dark); font-size: 0.8rem; transition: transform 0.3s; transform: rotate(180deg);">▼</span>
+                                </div>
+                                <ul id="sub-mukhafaf" style="list-style: none; padding-left: 15px; margin-top: 0; border-left: 2px solid var(--primary-light); margin-left: 15px; margin-bottom: 10px; display: block;">
+                                    <li><a href="#kilmi" style="font-size: 0.95rem; padding: 5px 10px; display: block;">📖 Kilmi</a></li>
+                                    <li><a href="#harfi" style="font-size: 0.95rem; padding: 5px 10px; display: block;">📖 Harfi</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openVideoModal('https://www.youtube.com/embed/ywK7_SS0FhI?si=hqqZtcvTX8VnGvK7')" style="font-size: 0.95rem; padding: 5px 10px; display: block;">🎥 Video Kilmi</a></li>
+                                    <li><a href="javascript:void(0)" onclick="openVideoModal('https://www.youtube.com/embed/zeZuCd-RUWs?si=Zrm3-9FhBQn9V9t5')" style="font-size: 0.95rem; padding: 5px 10px; display: block;">🎥 Video Harfi</a></li>
+                                    <li><a href="#quiz" style="font-size: 0.95rem; padding: 5px 10px; display: block;">🎮 Quiz</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="mad,iwadh.html">Mad Iwadh</a></li>
+                        <li><a href="mad,badal.html">Mad Badal</a></li>
+                        <li><a href="mad,Arif.html">Mad 'Arid Lissukun</a></li>
+                        <li><a href="mad,Layin.html">Mad Layin</a></li>
+                        <li><a href="mad,Farqi.html">Mad Farqi</a></li>
+                        <li><a href="mad,shilah.html">Mad Shilah</a></li>
+                        <li><a href="mad,tamkin.html">Mad Tamkin</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <main class="content-area">
+            <header style="margin-bottom: 50px;">
+                <span
+                    style="display: inline-block; padding: 6px 16px; background: rgba(20, 184, 166, 0.1); color: var(--primary-dark); border-radius: 50px; font-weight: 600; margin-bottom: 15px; font-size: 0.95rem;">Materi
+                    04</span>
+                <h1>Mad Lazim Mukhaffaf</h1>
+                <p style="font-size: 1.25rem;">Mad Lazim Mukhaffaf terbagi menjadi dua: <strong>Kilmi</strong> (bertemu huruf bersukun dalam satu kata) dan <strong>Harfi</strong> (bertemu huruf bersukun pada permulaan surah). Keduanya dibaca panjang 6 harakat.</p>
+            </header>
+
+            <!-- Step 1: Mukhaffaf Kilmi -->
+            <section id="kilmi" class="learning-step">
+                <div class="step-left">
+                    <div class="step-number">1</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-content">
+                    <h2>📖 Mad Lazim Mukhaffaf Kilmi</h2>
+                    <div
+                        style="background: linear-gradient(135deg, rgba(20,184,166,0.07) 0%, rgba(245,158,11,0.05) 100%); border-left: 4px solid var(--primary-color); border-radius: var(--radius-small); padding: 24px 28px; margin-bottom: 20px;">
+                        <p style="font-size: 1.15rem; margin-bottom: 12px;"><strong>Definisi:</strong> Mad Lazim
+                            Mukhaffaf Kilmi terjadi apabila huruf mad (ا، و، ي) bertemu dengan huruf <em>sukun asli</em>
+                            (bukan tasydid) dalam <strong>satu kata</strong>.</p>
+                        <p style="font-size: 1.15rem; margin-bottom: 12px;"><strong>Hukum bacaan:</strong> Wajib dibaca
+                            panjang <strong>6 harakat (3 alif)</strong>.</p>
+                        <p style="font-size: 1.15rem; margin-bottom: 0;"><strong>Contoh:</strong> <span
+                                style="font-family: serif; font-size: 1.5rem; color: var(--primary-dark);">آلْآنَ</span>
+                            — kata <em>aal-aana</em> dalam Surah Yunus ayat 51 dan 91. Huruf alif mad bertemu dengan lam
+                            yang bersukun dalam satu kata.</p>
+                    </div>
+                    <div
+                        style="background: rgba(245,158,11,0.08); border-radius: var(--radius-small); padding: 16px 22px; margin-bottom: 25px;">
+                        <p style="font-size: 1.05rem; color: var(--text-muted);">💡 <strong>Catatan:</strong> Mad Lazim
+                            Mukhaffaf Kilmi sangat jarang ditemui dalam Al-Qur'an. Contoh yang paling terkenal hanya ada
+                            di Surah Yunus.</p>
+                    </div>
+                    <div class="video-card-action">
+                        <div class="video-icon">📺</div>
+                        <h4>Tonton Penjelasan Video - Kilmi</h4>
+                        <p>Simak penjelasan lengkap tentang Mad Lazim Mukhaffaf Kilmi.</p>
+                        <button class="btn btn-primary" onclick="openVideoModal('https://www.youtube.com/embed/ywK7_SS0FhI?si=hqqZtcvTX8VnGvK7')" style="padding: 10px 24px; font-size: 1rem; border-radius: 50px;">
+                            🎥 Tonton Video Kilmi
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2: Mukhaffaf Harfi -->
+            <section id="harfi" class="learning-step">
+                <div class="step-left">
+                    <div class="step-number">2</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-content">
+                    <h2>📖 Mad Lazim Mukhaffaf Harfi</h2>
+                    <div
+                        style="background: linear-gradient(135deg, rgba(20,184,166,0.07) 0%, rgba(245,158,11,0.05) 100%); border-left: 4px solid var(--secondary-color); border-radius: var(--radius-small); padding: 24px 28px; margin-bottom: 20px;">
+                        <p style="font-size: 1.15rem; margin-bottom: 12px;"><strong>Definisi:</strong> Mad Lazim
+                            Mukhaffaf Harfi terjadi pada huruf-huruf pembuka surah (<em>fawatihus suwar</em>) yang
+                            terdiri dari 3 huruf, di mana huruf tengahnya adalah huruf mad dan huruf ketiga bersukun
+                            (tidak ditasydid).</p>
+                        <p style="font-size: 1.15rem; margin-bottom: 12px;"><strong>Hukum bacaan:</strong> Wajib dibaca
+                            panjang <strong>6 harakat (3 alif)</strong>.</p>
+                        <p style="font-size: 1.15rem; margin-bottom: 0;"><strong>Huruf-huruf yang termasuk:</strong>
+                            <span
+                                style="font-family: serif; font-size: 1.4rem; color: var(--primary-dark); letter-spacing: 4px;">ن
+                                — ق — ص — ع — س — ل — ك — م</span> — (huruf yang bila dieja memiliki huruf mad di tengah
+                            dan sukun di akhir).
+                        </p>
+                    </div>
+                    <div
+                        style="background: rgba(245,158,11,0.08); border-radius: var(--radius-small); padding: 16px 22px; margin-bottom: 25px;">
+                        <p style="font-size: 1.05rem; color: var(--text-muted);">💡 <strong>Catatan:</strong> Berbeda
+                            dengan Mukhaffaf Kilmi yang terjadi dalam satu <em>kata</em>, Mukhaffaf Harfi terjadi pada
+                            <em>huruf</em> (hija'iyyah) di awal surah. Huruf-huruf ini dibaca sebagai nama huruf, bukan
+                            sebagai kata.
+                        </p>
+                    </div>
+                    <div class="video-card-action">
+                        <div class="video-icon">📺</div>
+                        <h4>Tonton Penjelasan Video - Harfi</h4>
+                        <p>Simak penjelasan lengkap tentang Mad Lazim Mukhaffaf Harfi.</p>
+                        <button class="btn btn-primary" onclick="openVideoModal('https://www.youtube.com/embed/zeZuCd-RUWs?si=Zrm3-9FhBQn9V9t5')" style="padding: 10px 24px; font-size: 1rem; border-radius: 50px;">
+                            🎥 Tonton Video Harfi
+                        </button>
+                    </div>
+
+                        <section id="quiz" class="learning-step">
+                <div class="step-left">
+                    <div class="step-number">3</div>
+                </div>
+                <div class="step-content"
+                    style="background: var(--bg-main); border: 2px dashed rgba(20, 184, 166, 0.4); text-align: center; padding: 50px 30px;">
+                    <div style="font-size: 3.5rem; margin-bottom: 15px;">🎮</div>
+                    <h3 style="color: var(--primary-dark); margin-bottom: 10px; font-size: 1.8rem;">Quiz Interaktif</h3>
+                    <p
+                        style="color: var(--text-muted); margin-bottom: 25px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        Uji pemahamanmu tentang Mad Lazim Mukhaffaf (Kilmi & Harfi). Persiapkan dirimu dengan menonton video dan
+                        mendengar audio terlebih dahulu.</p>
+                    <button class="btn btn-primary" style="padding: 12px 30px; font-size: 1.1rem;"
+                        onclick="startQuiz()">Mulai Quiz</button>
+                </div>
+            </section>
+                </div>
+            </section>
+
+            <!-- Step 3: Quiz -->
+        
+        </main>
+    </div>
+
+    <script src="script.js?v=8"></script>
+    <script>
+        function toggleSubMenu(menuId, iconId) {
+            const menu = document.getElementById(menuId);
+            const icon = document.getElementById(iconId);
+            if (menu.style.display === 'none') {
+                menu.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                menu.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+
+</html>

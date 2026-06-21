@@ -1,0 +1,17 @@
+{
+  "name": "Sunnesia - Belajar Tahsin",
+  "short_name": "Sunnesia",
+  "description": "Platform pembelajaran Tahsin interaktif berbasis digital.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#14b8a6",
+  "icons": [
+    {
+      "src": "img 5.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,844 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> SUNNESIA - Website pembelajaran bersama</title>
+    <link rel="stylesheet" href="style.css?v=10">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <!-- Landscape Orientation Overlay -->
+    <div id="landscapeOverlay" class="landscape-overlay">
+        <div class="landscape-overlay-content">
+            <div class="landscape-icon">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="16" width="48" height="32" rx="4" stroke="currentColor" stroke-width="3"/>
+                    <circle cx="32" cy="32" r="2" fill="currentColor"/>
+                    <path d="M20 8 L20 14 M44 8 L44 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="rotate-arrows"/>
+                </svg>
+                <div class="phone-rotate-anim">
+                    <svg viewBox="0 0 40 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="4" width="32" height="56" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="20" cy="52" r="2" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+            <h3>Putar Layar Kamu 📱</h3>
+            <p>Gunakan mode <strong>Landscape</strong> untuk pengalaman belajar yang lebih baik!</p>
+            <button id="dismissLandscape" class="btn btn-primary landscape-dismiss-btn">Tetap Mode Portrait</button>
+        </div>
+    </div>
+
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo"> <img src="8.png" width="100px"
+                    alt="">SUNNESIA</a>
+
+            <button class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#pengenalan">Pengenalan</a></li>
+                <li><a href="#solusi">Pembelajaran</a></li>
+                <li><a href="#fitur">Materi</a></li>
+                <li><a href="#pencapaian">Pencapaian</a></li>
+                <li><a href="#tim">Tim</a></li>
+            </ul>
+
+            <!-- Dark/Light Mode Toggle -->
+            <button id="themeToggle" class="theme-toggle-btn" title="Ganti Mode Gelap/Terang" aria-label="Toggle dark mode">
+                <span class="theme-icon theme-icon-sun">☀️</span>
+                <span class="theme-icon theme-icon-moon">🌙</span>
+                <span class="theme-toggle-slider"></span>
+            </button>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-section section-padding">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>SUNNESIA</h1>
+                <p class="tagline">Belajar tahsin lebih menyenangkan</p>
+                <p class="description">Memperdalam ilmu pemahaman, bersama SUNNESIA, teman tahsin seperjuangan, mari
+                    belajar. Membangun fondasi tajwid dengan mudah dan interaktif.</p>
+
+                <div id="auth-section" class="auth-buttons" style="display: flex; gap: 15px; margin-top: 20px;">
+                    <button id="btnLogin" class="btn btn-primary"
+                        style="animation: pulse 2s infinite; box-shadow: 0 0 15px rgba(13, 148, 136, 0.4);"
+                        onclick="openLoginModal()">Log In</button>
+                </div>
+
+                <div id="profile-section" style="display: none; align-items: center; gap: 15px; margin-top: 10px;">
+                    <div class="profile-badge">
+                        <img id="profileAvatar"
+                            src="https://ui-avatars.com/api/?name=User&background=000&color=fff&size=100" alt="Profile"
+                            style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div style="text-align: left;">
+                            <strong id="profileName"
+                                style="display: block; line-height: 1.2; color: #000; font-size: 1.1rem;">User</strong>
+                            <span style="font-size: 0.9rem; color: #555; font-weight: 500;">Akun Aktif</span>
+                        </div>
+                    </div>
+                    <button id="btnLogout" class="btn btn-black" onclick="handleLogout()"
+                        style="padding: 12px 24px; font-size: 1.1rem;">Log Out</button>
+                </div>
+            </div>
+
+            <!-- Floating Blobs for Premium Feel & Lively Animation -->
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+
+            <div class="hero-collage">
+                <div class="collage-item collage-item-1">
+                    <img src="0.png" alt="Belajar Tahsin">
+                    <div class="floating-label label-1"></div>
+                </div>
+                <div class="collage-item collage-item-2">
+                    <img src="8.png" alt="Materi">
+                </div>
+                <div class="collage-item collage-item-3">
+                    <img src="10.png" alt="Quiz">
+                    <div class="floating-label label-2"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Smooth gradient fade from hero into pengenalan -->
+    <div style="height: 80px; background: linear-gradient(to bottom, #e0f2fe 0%, #ffffff 100%); margin-top: -2px;">
+    </div>
+
+    <section id="pengenalan" class="section-padding" style="background: #ffffff; padding-top: 40px;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="animate-title">✨ Pengenalan Fitur ✨</h2>
+                <p>Jelajahi cara baru belajar Tahsin yang lebih seru dan interaktif!</p>
+            </div>
+            <div class="card-grid">
+
+                <div class="card feature-box" style="--accent-color: #ff6b6b;"
+                    onclick="triggerFeatureAnimation('paper', this, event)">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feature-icon" style="width: 50px; height: 50px;">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            <circle cx="12" cy="10" r="2" fill="white"></circle>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Pembelajaran Adaptif</h3>
+                        <p>Web menyediakan pembelajaran yang adaptif dengan dukungan audio & video yang jernih!</p>
+                    </div>
+                    <div class="card-blob"></div>
+                </div>
+
+                <div class="card feature-box" style="--accent-color: #4ecdc4;"
+                    onclick="triggerFeatureAnimation('star', this, event)">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feature-icon" style="width: 50px; height: 50px;">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            <circle cx="12" cy="8" r="3" stroke="white" fill="white" fill-opacity="0.3"></circle>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Quiz Interaktif</h3>
+                        <p>Uji kemampuanmu dengan quiz seru dan kumpulkan lencana pencapaian keren!</p>
+                    </div>
+                    <div class="card-blob"></div>
+                </div>
+
+                <div class="card feature-box" style="--accent-color: #f59e0b;"
+                    onclick="triggerFeatureAnimation('game', this, event)">
+                    <div class="icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feature-icon" style="width: 50px; height: 50px;">
+                            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                            <path d="M6 12h4M8 10v4"></path>
+                            <circle cx="15" cy="12" r="1" fill="white"></circle>
+                            <circle cx="18" cy="12" r="1" fill="white"></circle>
+                        </svg>
+                    </div>
+                    <div class="card-content">
+                        <h3>Games Edukatif</h3>
+                        <p>Bermain bersama teman dalam game edukatif yang menantang dan menyenangkan!</p>
+                    </div>
+                    <div class="card-blob"></div>
+                </div>
+
+
+            </div>
+            <div class="font-lobster" style="text-align: center; margin-top: 50px; font-size: 2rem;">
+                <strong>Yuk, mulai petualangan belajarmu sekarang! 🚀</strong>
+            </div>
+            <!-- Trust Indicator Moved Here -->
+            <div class="trust-bar" style="margin-top: 30px;">
+                <span>✨ 0+ Pelajar Aktif Bergabung</span>
+                <span>🏆 Konten Standar Nasional</span>
+                <span>✅ 100% Gratis & Interaktif</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="solusi" class="section-padding solusi-section">
+        <!-- Decorative Background Elements -->
+        <div class="solusi-orb solusi-orb-1"></div>
+        <div class="solusi-orb solusi-orb-2"></div>
+        <div class="solusi-orb solusi-orb-3"></div>
+
+        <div class="container">
+            <!-- Section Header -->
+            <div class="solusi-header">
+                <h2 class="solusi-title">Apa Itu <span class="solusi-highlight">Mad</span> ?</h2>
+                <p class="solusi-subtitle">Hukum bacaan tajwid tentang pemanjangan suara huruf dalam Al-Qur'an</p>
+            </div>
+
+            <!-- Main Content: 4 Flip Cards -->
+            <div class="solusi-cards-grid">
+                <!-- Card 1: Definisi Mad -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-front-1">
+                            <div class="card-icon-wrapper">📖</div>
+                            <div class="arabic-word">المَدّ</div>
+                            <h3>Apa Itu Mad?</h3>
+                            <p>Pelajari arti Mad secara bahasa dan istilah dalam ilmu Tajwid.</p>
+                            <div class="flip-hint-badge">Sentuh untuk Balik 🔄</div>
+                        </div>
+                        <div class="flip-card-back card-back-1">
+                            <h3>📖 Definisi Mad</h3>
+                            <div class="card-back-body">
+                                <p><strong>Secara Bahasa:</strong> Berarti memanjangkan atau menambah suara.</p>
+                                <p><strong>Secara Istilah:</strong> Memanjangkan suara saat mengucapkan huruf mad ketika bertemu dengan hamzah atau sukun.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pentingnya Mad -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-front-2">
+                            <div class="card-icon-wrapper">🎯</div>
+                            <div class="arabic-word">الأَهَمِّيَّة</div>
+                            <h3>Pentingnya Mad</h3>
+                            <p>Mengapa membaca Mad dengan benar sangat penting di Al-Qur'an?</p>
+                            <div class="flip-hint-badge">Sentuh untuk Balik 🔄</div>
+                        </div>
+                        <div class="flip-card-back card-back-2">
+                            <h3>🎯 Urgensi Mad</h3>
+                            <div class="card-back-body">
+                                <p><strong>Menjaga Makna:</strong> Salah panjang bacaan dapat merusak dan mengubah arti kata dalam ayat suci secara drastis.</p>
+                                <p><strong>Keindahan Tartil:</strong> Membaca Mad dengan benar memperindah dan melancarkan lantunan tilawah sesuai sunnah.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Huruf Mad -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-front-3">
+                            <div class="card-icon-wrapper">✨</div>
+                            <div class="arabic-word">حُرُوفُ المَدّ</div>
+                            <h3>Huruf Mad</h3>
+                            <p>Kenali tiga huruf dasar hijaiyah yang memicu hukum pemanjangan.</p>
+                            <div class="flip-hint-badge">Sentuh untuk Balik 🔄</div>
+                        </div>
+                        <div class="flip-card-back card-back-3">
+                            <h3>✨ 3 Huruf Mad</h3>
+                            <div class="card-back-body">
+                                <ul class="back-points">
+                                    <li><strong>Alif (ا):</strong> Berfungsi sebagai mad jika didahului oleh huruf berharakat <strong>fathah</strong>.</li>
+                                    <li><strong>Wawu (و):</strong> Berfungsi sebagai mad jika berharakat sukun dan didahului <strong>dhammah</strong>.</li>
+                                    <li><strong>Ya (ي):</strong> Berfungsi sebagai mad jika berharakat sukun dan didahului <strong>kasrah</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Hukum Mad -->
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-front-4">
+                            <div class="card-icon-wrapper">💎</div>
+                            <div class="arabic-word">أَقْسَامُ المَدّ</div>
+                            <h3>Hukum & Cabang</h3>
+                            <p>Bagaimana hukum bacaan Mad dibagi untuk dipelajari?</p>
+                            <div class="flip-hint-badge">Sentuh untuk Balik 🔄</div>
+                        </div>
+                        <div class="flip-card-back card-back-4">
+                            <h3>💎 Hukum Mad</h3>
+                            <div class="card-back-body">
+                                <p><strong>Mad Ashli (Thabi'i):</strong> Mad dasar/murni yang wajib dibaca sepanjang <strong>2 harakat</strong>.</p>
+                                <p><strong>Mad Far'i:</strong> Mad cabang/turunan yang dibaca lebih panjang (<strong>2 s.d. 6 harakat</strong>) karena bertemu hamzah/sukun.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fitur" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Materi Pembelajaran</h2>
+                <p>Macam Macam Mad</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <a href="mad,thabii.html" class="feature-link">
+                        <h4>Mad Asli</h4>
+                        <p>Mad Thabi'i</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,wajib.html" class="feature-link">
+                        <h4>Mad far'i</h4>
+                        <p>Mad wajib dan jaiz</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,mustaqqal.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Lazim Mutsaqqal</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,mukhafaf.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Lazim Mukhaffaf</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,Farqi.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Farqi </p>
+                    </a>
+                </div>
+
+
+
+                <div class="feature-card">
+                    <a href="mad,Layin.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Layin </p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,Arif.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Arid Lissukun</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,shilah.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad shilah</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,iwadh.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Iwadh</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,badal.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Badal</p>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <a href="mad,tamkin.html" class="feature-link">
+                        <h4>Mad Far'i</h4>
+                        <p>Mad Tamkin</p>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section id="pencapaian" class="section-padding bg-main">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="animate-title">🏆Progres & Tantangan </h2>
+                <p>Lihat koleksi lencanamu dan bersiaplah untuk petualangan seru!</p>
+            </div>
+            <div class="pencapaian-tabs">
+                <button class="tab-btn active" onclick="switchPencapaian('badge', this)">🏆 Lencana</button>
+                <button class="tab-btn" onclick="switchPencapaian('progress', this)">📊 Progres</button>
+                <button class="tab-btn" onclick="switchPencapaian('game', this)">🎮 Game</button>
+            </div>
+
+            <div class="pencapaian-slider-container">
+                <div class="pencapaian-slider" id="pencapaianSlider">
+                    <!-- Slide 1: Koleksi Lencana -->
+                    <div class="pencapaian-slide">
+                        <div class="card achievement-card full-card">
+                            <div class="card-header">
+                                <h3>Koleksi Lencana</h3>
+                                <p>Dapatkan skor 100 di kuis untuk membuka lencana permanen.</p>
+                            </div>
+                            <div class="badge-showcase" id="globalBadgeDisplay">
+                                <div class="badge-item locked" data-id="Mad Thabi'i">
+                                    <div class="badge-icon">📗</div>
+                                    <span>Mad Thabi'i</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Wajib & Jaiz">
+                                    <div class="badge-icon">💎</div>
+                                    <span>Mad Wajib & Jaiz</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Lazim Mutsaqqal">
+                                    <div class="badge-icon">👑</div>
+                                    <span>Mad Mutsaqqal</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Lazim Mukhaffaf">
+                                    <div class="badge-icon">🏆</div>
+                                    <span>Mad Mukhaffaf</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Farqi">
+                                    <div class="badge-icon">⭐</div>
+                                    <span>Mad Farqi</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Layin">
+                                    <div class="badge-icon">🌟</div>
+                                    <span>Mad Layin</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Arif Lissukun">
+                                    <div class="badge-icon">🎖️</div>
+                                    <span>Mad 'Arid Lissukun</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Shilah">
+                                    <div class="badge-icon">💠</div>
+                                    <span>Mad Shilah</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Iwadh">
+                                    <div class="badge-icon">🔷</div>
+                                    <span>Mad Iwadh</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Badal">
+                                    <div class="badge-icon">🏅</div>
+                                    <span>Mad Badal</span>
+                                </div>
+                                <div class="badge-item locked" data-id="Mad Tamkin">
+                                    <div class="badge-icon">🌠</div>
+                                    <span>Mad Tamkin</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Progres Belajar -->
+                    <div class="pencapaian-slide">
+                        <div class="card progress-card full-card">
+                            <div class="card-header">
+                                <h3>Progres Pembelajaran Saya</h3>
+                                <p>Selesaikan materi dan kuis untuk meningkatkan persentase belajar.</p>
+                            </div>
+                            <div class="progress-dashboard" id="progressDashboard">
+                                <div class="progress-item" data-topic="Mad Thabi'i">
+                                    <div class="progress-info">
+                                        <span>Mad Thabi'i</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Wajib & Jaiz">
+                                    <div class="progress-info">
+                                        <span>Mad Wajib & Jaiz</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Lazim Mutsaqqal">
+                                    <div class="progress-info">
+                                        <span>Mad Lazim Mutsaqqal</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Lazim Mukhaffaf">
+                                    <div class="progress-info">
+                                        <span>Mad Lazim Mukhaffaf</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Farqi">
+                                    <div class="progress-info">
+                                        <span>Mad Farqi</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Layin">
+                                    <div class="progress-info">
+                                        <span>Mad Layin</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Arif Lissukun">
+                                    <div class="progress-info">
+                                        <span>Mad 'Arid Lissukun</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Shilah">
+                                    <div class="progress-info">
+                                        <span>Mad Shilah</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Iwadh">
+                                    <div class="progress-info">
+                                        <span>Mad Iwadh</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Badal">
+                                    <div class="progress-info">
+                                        <span>Mad Badal</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                                <div class="progress-item" data-topic="Mad Tamkin">
+                                    <div class="progress-info">
+                                        <span>Mad Tamkin</span>
+                                        <span class="progress-percent">0%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="pencapaian-slide">
+                        <div class="game-teaser-card full-card space-theme">
+                            <div class="stars-layer"></div>
+                            <div class="nebula-layer"></div>
+                            <div class="game-teaser-layout">
+
+                                <div class="game-teaser-text">
+                                    <img src="https://via.placeholder.com/150/0D0D14/FFFFFF?text=PNG"
+                                        alt="Teaser Art Element" class="teaser-png-element">
+
+                                    <div class="text-content-group">
+                                        <div class="badge-soon">COMING SOON</div>
+                                        <h3>SUNNEIUS</h3>
+                                        <p>Uji kefasihan tajwidmu dalam game social deduction bertema tajwid! Tantang
+                                            teman-temanmu dalam petualangan multiplayer yang seru.</p>
+                                        <div class="game-features">
+                                            <span>🎮 Multiplayer</span>
+                                            <span>🎯 15+ Unique Quest</span>
+                                            <span>⚡ Real-time Feedback</span>
+                                            <span>👑 Global Leaderboard</span>
+                                        </div>
+                                        <button onclick="window.location.href='/htdocs/'"
+                                            class="btn btn-primary btn-shine" style="margin-top: 30px;">Kunjungi
+                                            Homepage Game</button>
+                                    </div>
+                                </div>
+
+                                <div class="game-teaser-image">
+                                    <img src="9.png" alt="Game Teaser">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="tim" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>TIM KELOMPOK 2</h2>
+                <p>our website builder</p>
+            </div>
+
+            <div class="tim-layout">
+                <!-- Avatar Float Kiri -->
+                <div class="tim-floating-avatars tim-avatars-left">
+                    <div class="floating-avatar avatar-a">
+                        <img src="atarida.jpeg" alt="Team">
+                    </div>
+                    <div class="floating-avatar avatar-b">
+                        <img src="az zahwa.jpeg" alt="Team">
+                    </div>
+                    <div class="floating-avatar avatar-c">
+                        <img src="asyifa.jpeg" alt="Team">
+                    </div>
+                </div>
+
+                <div class="slider-container">
+                    <button class="slider-btn prev-btn" id="prevSlide">&#10094;</button>
+
+                    <div class="slider-wrapper">
+                        <div class="team-slider" id="teamSlider">
+                            <div class="team-card">
+                                <div class="team-img-wrapper">
+                                    <img src="ruli.jpeg" alt="Ruli Maulana" class="team-img">
+                                </div>
+                                <div class="team-info">
+                                    <h4>Ruli Maulana</h4>
+                                    <span>Front-End Developer</span>
+                                    <p class="team-bio">Bertanggung jawab merancang antarmuka website yang responsif dan
+                                        menarik. Menguasai HTML, CSS, JavaScript, dan modern UI/UX design.</p>
+                                </div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-img-wrapper">
+                                    <img src="asyifa.jpeg" alt="Asyifa Putri" class="team-img">
+                                </div>
+                                <div class="team-info">
+                                    <h4>Asyifa Putri</h4>
+                                    <span>Front-End Developer</span>
+                                    <p class="team-bio">Memastikan interaksi pengguna berjalan mulus dan tampilan
+                                        animasi
+                                        yang dinamis. Ahli dalam implementasi desain ke dalam kode.</p>
+                                </div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-img-wrapper">
+                                    <img src="pandu.jpeg" alt="Pandu Aji Gama" class="team-img">
+                                </div>
+                                <div class="team-info">
+                                    <h4>Pandu Aji Gama</h4>
+                                    <span>Back-End Developer</span>
+                                    <p class="team-bio">Menangani logika server, database, dan keamanan sistem.
+                                        Memastikan
+                                        seluruh data tersimpan dengan baik dan diakses dengan cepat.</p>
+                                </div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-img-wrapper">
+                                    <img src="az zahwa.jpeg" alt="Az-Zahwa Wafiq Nabila" class="team-img">
+                                </div>
+                                <div class="team-info">
+                                    <h4>Az-Zahwa Wafiq Nabila</h4>
+                                    <span>Content Creator</span>
+                                    <p class="team-bio">Menyusun dan merancang materi edukasi tahsin yang mudah
+                                        dipahami,
+                                        menarik, dan sesuai dengan standar kurikulum.</p>
+                                </div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-img-wrapper">
+                                    <img src="atarida.jpeg" alt="Atarida Fatma" class="team-img">
+                                </div>
+                                <div class="team-info">
+                                    <h4>Atarida Fatma</h4>
+                                    <span>Media Creator</span>
+                                    <p class="team-bio">Memproduksi aset visual, video, dan animasi interaktif untuk
+                                        menunjang pengalaman belajar yang lebih menyenangkan.</p>
+                                </div>
+                            </div>
+                            <div class="team-card">
+                                <div class="team-img-wrapper">
+                                    <img src="wildan.jpeg" alt="Muhammad Wildan Abdurrahman" class="team-img">
+                                </div>
+                                <div class="team-info">
+                                    <h4>Muhammad Wildan Abdurrahman</h4>
+                                    <span>UI/UX Designer</span>
+                                    <p class="team-bio">Mendesain alur pengguna dan antarmuka aplikasi. Memfokuskan pada
+                                        kemudahan penggunaan dan estetika visual modern.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="slider-btn next-btn" id="nextSlide">&#10095;</button>
+                </div>
+
+                <!-- Avatar Float Kanan -->
+                <div class="tim-floating-avatars tim-avatars-right">
+                    <div class="floating-avatar avatar-a">
+                        <img src="ruli.jpeg" alt="Team">
+                    </div>
+                    <div class="floating-avatar avatar-b">
+                        <img src="pandu.jpeg" alt="Team">
+                    </div>
+                    <div class="floating-avatar avatar-c">
+                        <img src="wildan.jpeg" alt="Team">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-main">
+
+
+            <div class="container footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="8.png" width="100px" alt="Logo SUNNESIA">
+                        <span>SUNNESIA</span>
+                    </div>
+                    <p class="footer-tagline">Platform pembelajaran Tahsin interaktif berbasis digital untuk generasi
+                        muda Muslim Indonesia.</p>
+                    <div class="footer-badges">
+                        <span>✅ Gratis 100%</span>
+                        <span>📚 Standar Nasional</span>
+                    </div>
+                </div>
+
+                <!-- Navigasi -->
+                <div class="footer-col">
+                    <h4>Navigasi</h4>
+                    <ul class="footer-nav-inline">
+                        <li><a href="#hero">🏠 Beranda</a></li>
+                        <li><a href="#pengenalan">✨ Pengenalan</a></li>
+                        <li><a href="#solusi">📖 Pembelajaran</a></li>
+                        <li><a href="#fitur">🗂️ Materi</a></li>
+                        <li><a href="#tim">👥 Tim</a></li>
+                        <li><a href="#pencapaian">🏆 Pencapaian</a></li>
+                    </ul>
+
+                    <!-- Social Media -->
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" title="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn" title="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                                <path
+                                    d="M12 0C5.373 0 0 5.373 0 12c0 2.126.554 4.121 1.523 5.855L0 24l6.302-1.498A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.681-.516-5.21-1.41L2.5 21.5l.929-4.218A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn" title="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn" title="TikTok">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rating Platform -->
+                <div class="footer-col">
+                    <h4>Rating Platform</h4>
+                    <div class="footer-rating-card" id="footerRatingCard">
+                        <div class="footer-rating-stars" id="footerStars">
+                            <span class="footer-star" data-value="1">★</span>
+                            <span class="footer-star" data-value="2">★</span>
+                            <span class="footer-star" data-value="3">★</span>
+                            <span class="footer-star" data-value="4">★</span>
+                            <span class="footer-star" data-value="5">★</span>
+                        </div>
+                        <p class="footer-rating-status" id="footerRatingStatus">Pilih bintang untuk memberi rating</p>
+                        <div class="footer-rating-stats">
+                            <span class="rating-num-big" id="footerRatingNum">0.0</span><span class="rating-max">/5</span>
+                            <span class="rating-count" id="footerRatingCount">(0 ulasan)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>© 2026 <strong>SUNNESIA</strong> — Kelompok 2 Pengembangan Media PAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+            <h3 class="modal-title">Selamat Datang</h3>
+            <p class="modal-subtitle">Masuk dengan akun Gmail kamu untuk melanjutkan pembelajaran tahsin.</p>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Email (Gmail)</label>
+                    <input type="email" id="loginEmail" class="form-input" placeholder="contoh@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <input type="password" id="loginPassword" class="form-input" placeholder="Masukkan password"
+                        required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js?v=9"></script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Thabi'i - SUNNESIA</title>
+    <link rel="stylesheet" href="style.css?v=9">
+<link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div style="flex: 1; display: flex; justify-content: flex-start;">
+                <a href="index.html#fitur" class="btn-back" style="padding: 8px 20px; font-size: 0.95rem;">
+                    <span style="margin-right: 6px; font-size: 1.2rem;">←</span> Beranda
+                </a>
+            </div>
+            <div class="logo" style="flex: 1; text-align: center; justify-content: center;">
+                <span
+                    style="font-family: 'Lobster Two', cursive; font-size: 2.5rem; color: var(--primary-color);">Sunnesia</span>
+            </div>
+            <div style="flex: 1;"></div>
+        </div>
+    </nav>
+
+    <div class="lms-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h3>Daftar Materi</h3>
+            <ul>
+                <li>
+                    <strong>Macam-Macam Mad</strong>
+                    
+                    
+                    <ul class="sub-menu">
+                        <li>
+                            <div style="background: rgba(20, 184, 166, 0.05); border-radius: var(--radius-small); margin-bottom: 5px; overflow: hidden;">
+                                <div onclick="toggleSubMenu('sub-thabii', 'icon-thabii')" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 10px 15px;">
+                                    <span style="color: var(--primary-dark); font-weight: 700; font-size: 1.05rem;">Mad Thabi'i</span>
+                                    <span id="icon-thabii" style="color: var(--primary-dark); font-size: 0.8rem; transition: transform 0.3s; transform: rotate(180deg);">▼</span>
+                                </div>
+                                <ul id="sub-thabii" style="list-style: none; padding-left: 15px; margin-top: 0; border-left: 2px solid var(--primary-light); margin-left: 15px; margin-bottom: 10px; display: block;">
+                                    <li><a href="javascript:void(0)" onclick="openVideoModal('https://www.youtube.com/embed/ivSxkSnkXV0?si=765nuuBvyxKiVxA0')" style="font-size: 0.95rem; padding: 5px 10px; display: block;">🎥 Video</a></li>
+                                    <li><a href="#quiz" style="font-size: 0.95rem; padding: 5px 10px; display: block;">🎮 Quiz</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="mad,wajib.html">Mad Wajib & Jaiz</a></li>
+                        <li><a href="mad,mustaqqal.html">Mad Lazim Mutsaqqal</a></li>
+                        <li><a href="mad,mukhafaf.html">Mad Lazim Mukhaffaf</a></li>
+                        <li><a href="mad,iwadh.html">Mad Iwadh</a></li>
+                        <li><a href="mad,badal.html">Mad Badal</a></li>
+                        <li><a href="mad,Arif.html">Mad 'Arid Lissukun</a></li>
+                        <li><a href="mad,Layin.html">Mad Layin</a></li>
+                        <li><a href="mad,Farqi.html">Mad Farqi</a></li>
+                        <li><a href="mad,shilah.html">Mad Shilah</a></li>
+                        <li><a href="mad,tamkin.html">Mad Tamkin</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content Area -->
+         <main class="content-area">
+            <header style="margin-bottom: 50px;">
+                <span
+                    style="display: inline-block; padding: 6px 16px; background: rgba(20, 184, 166, 0.1); color: var(--primary-dark); border-radius: 50px; font-weight: 600; margin-bottom: 15px; font-size: 0.95rem;">Materi
+                    Baru</span>
+                <h1>Mad Thabii</h1>
+                <p style="font-size: 1.25rem;">Mad Ṭabī‘ī adalah mad yang terjadi apabila terdapat huruf alif setelah fathah, wawu sukun setelah dhammah, atau ya sukun setelah kasrah. Dibaca panjang 2 harakat.</p>
+            </header>
+
+            <!-- Step 1: Video -->
+            <section id="video" class="learning-step">
+                <div class="step-left">
+                    <div class="step-number">1</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-content">
+                    <h2><span style="font-size: 1.5rem;">🎥</span> Video Pembelajaran</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Perhatikan secara seksama penjelasan yang diberikan, selamat belajar !!!</p>
+                    <div class="video-card-action">
+                        <div class="video-icon">📺</div>
+                        <h4>Tonton Penjelasan Video</h4>
+                        <p>Simak penjelasan lengkap materi ini dalam format video interaktif.</p>
+                        <button class="btn btn-primary" onclick="openVideoModal('https://www.youtube.com/embed/WK9mAz2Jdwg?si=POoQk8IYTl-qbmv1' )" style="padding: 12px 30px; font-size: 1.1rem; border-radius: 50px;">
+                            🎥 Mulai Menonton
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            
+
+            <!-- Step 3: Quiz -->
+            <section id="quiz" class="learning-step">
+                <div class="step-left">
+                    <div class="step-number">2</div>
+                </div>
+                <div class="step-content"
+                    style="background: var(--bg-main); border: 2px dashed rgba(20, 184, 166, 0.4); text-align: center; padding: 50px 30px;">
+                    <div style="font-size: 3.5rem; margin-bottom: 15px;">🎮</div>
+                    <h3 style="color: var(--primary-dark); margin-bottom: 10px; font-size: 1.8rem;">Quiz Interaktif</h3>
+                    <p
+                        style="color: var(--text-muted); margin-bottom: 25px; font-size: 1.1rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        Uji pemahamanmu tentang Mad Thabi'i. Persiapkan dirimu dengan menonton video dan mendengar audio
+                        terlebih dahulu.</p>
+                    <button class="btn btn-primary" style="padding: 12px 30px; font-size: 1.1rem;"
+                        onclick="startQuiz()">Mulai Quiz</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js?v=8"></script>
+    <script>
+        // Logika untuk Accordion Sub-Bab
+        function toggleSubMenu(menuId, iconId) {
+            const menu = document.getElementById(menuId);
+            const icon = document.getElementById(iconId);
+
+            if (menu.style.display === 'none') {
+                menu.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)'; // Panah ke atas
+            } else {
+                menu.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)'; // Panah ke bawah
+            }
+        }
+    </script>
+</body>
+
+</html>
